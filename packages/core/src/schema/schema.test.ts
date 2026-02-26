@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { VideoProjectSchema, TrackSchema, ClipSchema, EffectSchema } from './index';
+import { VideoProjectSchema, ClipSchema, EffectSchema } from './index.js';
 
 describe('Schema Validation', () => {
   describe('VideoProjectSchema', () => {
@@ -42,7 +42,7 @@ describe('Schema Validation', () => {
       const result = VideoProjectSchema.safeParse(invalidProject);
       expect(result.success).toBe(false);
       if (!result.success) {
-        expect(result.error.issues[0].message).toContain("Project version must be '0.1.0'");
+        expect(result.error.issues[0]?.message).toContain("Project version must be '0.1.0'");
       }
     });
 
