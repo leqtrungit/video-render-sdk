@@ -5,8 +5,8 @@ describe('RenderEventEmitter', () => {
   it('extends EventEmitter and can be instantiated', () => {
     const emitter = new RenderEventEmitter();
     expect(emitter).toBeDefined();
-    expect(emitter.on).toBeInstanceOf(Function);
-    expect(emitter.emit).toBeInstanceOf(Function);
+    expect(typeof emitter.on).toBe('function');
+    expect(typeof emitter.emit).toBe('function');
   });
 
   it('emits progress events with correct payload', () => {
