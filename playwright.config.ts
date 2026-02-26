@@ -13,9 +13,9 @@ export default defineConfig({
       use: { browserName: 'chromium' },
     },
   ],
-  webServer: {
-    command: 'npm run dev --workspace=packages/client',
-    url: 'http://localhost:5173',
-    reuseExistingServer: !process.env['CI'],
-  },
+  // webServer: {
+  //   command: 'npm run dev --workspace=packages/client',
+  //   url: 'http://localhost:5173',
+  //   reuseExistingServer: !process.env['CI'],
+  // },
 });
