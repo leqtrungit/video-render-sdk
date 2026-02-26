@@ -30,9 +30,9 @@
 
 ### 1.2 Events (`src/events/`)
 
-- [ ] `eventemitter3` wrapper
-- [ ] Event types: `ProgressEvent`, `DecisionEvent`, `ErrorEvent`
-- [ ] Export `RenderEventEmitter` base class
+- [x] `eventemitter3` wrapper
+- [x] Event types: `ProgressEvent`, `DecisionEvent`, `ErrorEvent`
+- [x] Export `RenderEventEmitter` base class
 
 ### 1.3 Hardware Assessment (`src/assessment/`)
 
