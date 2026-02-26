@@ -1,4 +1,4 @@
-import EventEmitter from 'eventemitter3';
+import { EventEmitter } from 'eventemitter3';
 
 /**
  * Standard render statuses shared across Client and Server renderers.
