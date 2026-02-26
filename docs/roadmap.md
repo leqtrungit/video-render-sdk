@@ -23,10 +23,10 @@
 
 ### 1.1 Schema (`src/schema/`)
 
-- [ ] Define Zod schemas: `VideoProjectSchema`, `TrackSchema`, `EffectSchema`, `OutputSettingsSchema`
-- [ ] Export inferred TypeScript types: `VideoProject`, `Track`, `Effect`, `OutputSettings`
-- [ ] Schema versioning — emit clear error if `version` field is unsupported
-- [ ] Unit tests: valid/invalid parsing, edge cases
+- [x] Define Zod schemas: `VideoProjectSchema`, `TrackSchema`, `EffectSchema`, `OutputSettingsSchema`
+- [x] Export inferred TypeScript types: `VideoProject`, `Track`, `Effect`, `OutputSettings`
+- [x] Schema versioning — emit clear error if `version` field is unsupported
+- [x] Unit tests: valid/invalid parsing, edge cases
 
 ### 1.2 Events (`src/events/`)
 
