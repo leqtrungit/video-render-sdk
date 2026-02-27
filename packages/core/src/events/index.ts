@@ -60,8 +60,6 @@ export interface RenderEvents<TResult = unknown> {
 /**
  * Base class for all renderers (Client, Server, Auto) to ensure consistent event API.
  */
-export class RenderEventEmitter<TResult = unknown> extends EventEmitter<
-  RenderEvents<TResult>
-> {
+export class RenderEventEmitter<TResult = unknown> extends EventEmitter<RenderEvents<TResult>> {
   // Add helper methods if needed, but currently just enforcing the interface is enough.
 }
