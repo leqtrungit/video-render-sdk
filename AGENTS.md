@@ -1,35 +1,58 @@
-# AGENTS.md
+## Workflow Orchestration
 
-## Setup commands
+### 1. Plan Mode Default
 
-- Install deps: `npm install`
-- Start dev server: `npm run dev`
-- Run tests: `npm test`
+- Enter plan mode for ANY non-trivial task (3+ steps or architectural decisions)
+- If something goes sideways, STOP and re-plan immediately - don't keep pushing
+- Use plan mode for verification steps, not just building
+- Write detailed specs upfront to reduce ambiguity
 
-## Code style
+### 2. Subagent Strategy
 
-- TypeScript strict mode (enforced via `tsconfig.base.json`)
-- Prettier formatting (run `npm run format`)
-- ESLint linting (run `npm run lint`)
-- Use functional patterns where possible
-- ES Modules (`type: "module"`)
+- Use subagents liberally to keep main context window clean
+- Offload research, exploration, and parallel analysis to subagents
+- For complex problems, throw more compute at it via subagents
+- One tack per subagent for focused execution
 
-## Dev environment tips
+### 3. Self-Improvement Loop
 
-- This is a monorepo managed by **Turbo** and **npm**.
-- Workspaces are located in the `packages/` directory (e.g., `packages/core`, `packages/client`, `packages/server`).
-- Use `npx turbo run <task> --filter <package_name>` to run tasks for a specific package.
-  - Example: `npx turbo run build --filter @vrs/core`
-- Check `package.json` in each workspace for available scripts and dependencies.
+- After ANY correction from the user: update `tasks/lessons.md` with the pattern
+- Write rules for yourself that prevent the same mistake
+- Ruthlessly iterate on these lessons until mistake rate drops
+- Review lessons at session start for relevant project
 
-## Testing instructions
+### 4. Verification Before Done
 
-- Run all tests from the root: `npm test`
-- The project uses **Vitest** for unit testing.
-- To focus on a specific package's tests: `npx turbo run test --filter <package_name>`
-- Ensure both `npm run lint` and `npm run typecheck` pass before submitting changes.
+- Never mark a task complete without proving it works
+- Diff behavior between main and your changes when relevant
+- Ask yourself: "Would a staff engineer approve this?"
+- Run tests, check logs, demonstrate correctness
 
-## PR instructions
+### 5. Demand Elegance (Balanced)
 
-- Follow **Conventional Commits** for PR titles (e.g., `feat: ...`, `fix: ...`, `chore: ...`).
-- Always run `npm run lint` and `npm test` to ensure CI checks will pass.
+- For non-trivial changes: pause and ask "is there a more elegant way?"
+- If a fix feels hacky: "Knowing everything I know now, implement the elegant solution"
+- Skip this for simple, obvious fixes - don't over-engineer
+- Challenge your own work before presenting it
+
+### 6. Autonomous Bug Fixing
+
+- When given a bug report: just fix it. Don't ask for hand-holding
+- Point at logs, errors, failing tests - then resolve them
+- Zero context switching required from the user
+- Go fix failing CI tests without being told how
+
+## Task Management
+
+1. **Plan First**: Write plan to `tasks/todo.md` with checkable items
+2. **Verify Plan**: Check in before starting implementation
+3. **Track Progress**: Mark items complete as you go
+4. **Explain Changes**: High-level summary at each step
+5. **Document Results**: Add review section to `tasks/todo.md`
+6. **Capture Lessons**: Update `tasks/lessons.md` after corrections
+
+## Core Principles
+
+- **Simplicity First**: Make every change as simple as possible. Impact minimal code.
+- **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
+- **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
